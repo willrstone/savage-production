@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 require('dotenv').config()
 const express = require("express")
+const port = 3000
 
 const app = express();
 
@@ -15,6 +16,6 @@ app.get('/', (req, res) => {
     res.render('home', { apikey : process.env.API_KEY })
 })
 
-app.listen(3000, ()=> {
+app.listen(process.env.PORT || port, ()=> {
     console.log(process.env.API_KEY);
 })
